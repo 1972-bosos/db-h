@@ -1,0 +1,28 @@
+#masthead {
+    .navbar {
+        .navbar-toggler {}
+
+        .offcanvas {
+            .offcanvas-header {}
+
+            .offcanvas-body {
+                .navbar-nav {
+                    .menu-item {
+                        a {}
+
+                        &::after {
+                            content: "|";
+                            margin: 0 15px;
+                        }
+
+                        &:last-child {
+                            &::after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
