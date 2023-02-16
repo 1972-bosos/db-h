@@ -1,0 +1,25 @@
+.navbar-nav {
+    .menu-item {
+        a {
+            font-size: 0.667rem;
+            color: $color03;
+            text-transform: uppercase;
+
+            &:hover {
+                color: $color02;
+            }
+
+            @media (max-width: 1499px) {
+                font-size: 0.583rem;
+            }
+        }
+
+        &.current-menu-item {
+            a {
+                font-weight: 700;
+                color: $color02;
+                pointer-events: none;
+            }
+        }
+    }
+}

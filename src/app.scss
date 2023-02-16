@@ -1,8 +1,29 @@
+//Bootstrap widths
+$grid-breakpoints: (xxs: 0,
+    xs: 480px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1500px,
+    xxxl: 1800px,
+);
+$container-max-widths: (xs: 450px,
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1420px,
+    xxxl: 1700px,
+);
+
 //Bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap.scss';
 
 //Custom
 @import "./custom-sass/typography";
+@import "./custom-sass/common";
 @import "./custom-sass/header";
 @import "./custom-sass/content";
 @import "./custom-sass/footer";
+@import "./custom-sass/bottom-contact-section";

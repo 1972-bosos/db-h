@@ -1,0 +1,157 @@
+.site-footer {
+    padding-top: clamp(15px, 1.823vw, 35px);
+    padding-bottom: 15px;
+
+    .row {
+        align-items: center;
+
+        &--top {
+            align-items: flex-end;
+            margin-bottom: clamp(15px, 1.823vw, 35px);
+
+            .footer-logo {
+                @media (max-width: 767px) {
+                    display: none;
+                }
+            }
+
+            .footer-small-logo {
+                display: none;
+
+                @media (max-width: 767px) {
+                    display: block;
+                }
+
+                @media (max-width: 575px) {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 991px) {
+                margin-bottom: clamp(15px, 3.027vw, 30px);
+            }
+        }
+
+        &--bottom {
+            p {
+                font-size: 0.5rem;
+
+                a {
+                    font-size: inherit;
+                }
+            }
+        }
+    }
+
+    .footer-menu {
+        .social-media-stripe {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 15px;
+
+            .social-media__link {
+                margin-right: 15px;
+
+                &::after {
+                    font-family: 'dockb-font-icons';
+                    font-size: 25px;
+                    color: $color01;
+                    transition: all 0.33s;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &--xing {
+                    &::after {
+                        content: $iconXing;
+                    }
+                }
+
+                &--linkedin {
+                    &::after {
+                        content: $iconLinkedIn;
+                    }
+                }
+
+                &--facebook {
+                    &::after {
+                        content: $iconFacebook;
+                    }
+                }
+
+                &--instagram {
+                    &::after {
+                        content: $iconInstagram;
+                        color: $white;
+                        background-color: $color01;
+                        border-radius: 10px;
+                        padding: 2px;
+                    }
+
+                    &:hover {
+                        &::after {
+                            color: $white !important;
+                            background-color: $color02;
+                        }
+                    }
+                }
+
+                &:hover {
+                    &::after {
+                        color: $color02;
+                    }
+                }
+            }
+        }
+
+        .navbar-nav {
+            &--footer {
+                flex-direction: row;
+                justify-content: flex-end;
+                padding-bottom: 10px;
+
+                .menu-item {
+                    display: flex;
+                    align-items: center;
+
+                    &::after {
+                        content: "│";
+                        font-size: 10px;
+                        color: $color03;
+                        margin: 0 5px;
+                    }
+
+                    &:last-child {
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+
+                @media (max-width: 575px) {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .copyright-info {
+        @media (max-width: 575px) {
+            text-align: right;
+        }
+    }
+
+    .author-info {
+        text-align: right;
+
+        @media (max-width: 575px) {
+            margin-top: 5px;
+        }
+    }
+
+    @media (max-width: 575px) {
+        padding-bottom: calc(clamp(75px, 15.652vw, 90px) + 15px);
+    }
+}

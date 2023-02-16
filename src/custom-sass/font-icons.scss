@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'dockb-font-icons';
+    src:
+        url('./font-icons/dockb-font-icons.ttf?1bc50y') format('truetype'),
+        url('./font-icons/dockb-font-icons.woff?1bc50y') format('woff'),
+        url('./font-icons/dockb-font-icons.svg?1bc50y#dockb-font-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+$iconCalendar: "\f073";
+$iconChat: "\e902";
+$iconClose: "\e900";
+$iconFacebook: "\ea90";
+$iconInstagram: "\ea92";
+$iconLinkedIn: "\eaca";
+$iconLogin: "\e973";
+$iconMail: "\e903";
+$iconMarker: "\f041";
+$iconMenu: "\e901";
+$iconXing: "\ead4";

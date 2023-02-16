@@ -1,9 +1,9 @@
+const webpack = require("webpack");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     watch: true,
     watchOptions: {
-        aggregateTimeout: 500,
         ignored: /node_modules/
     },
     entry: {
@@ -13,6 +13,10 @@ module.exports = {
         ]
     },
     plugins:[
+        new webpack.ProvidePlugin({
+            $: require.resolve('jquery'),
+            jQuery: require.resolve('jquery')
+        }),
         new MiniCssExtractPlugin({
             filename: "[name].css"
         }),

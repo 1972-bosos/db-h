@@ -1,0 +1,83 @@
+.bottom-contact-section {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+    flex-wrap: nowrap;
+    background-color: $white;
+
+    .section__area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+        width: 33.333%;
+        height: clamp(75px, 15.652vw, 90px);
+        border-top: 1px solid $color01;
+        border-right: 1px solid $color01;
+
+        &__icon {
+            display: flex;
+            height: clamp(40px, 8.696vw, 50px);
+            justify-content: center;
+            align-items: center;
+
+            &::after {
+                font-family: 'dockb-font-icons';
+                font-size: clamp(30px, 6.957vw, 40px);
+                line-height: 1;
+                color: $color01;
+                transition: color 0.33s;
+            }
+
+            &:hover {
+                &::after {
+                    color: $color02;
+                }
+            }
+
+            &--place {
+                &::after {
+                    content: $iconMarker;
+                }
+            }
+
+            &--login {
+                &::after {
+                    content: $iconLogin;
+                }
+            }
+
+            &--login-active {
+                &::after {
+                    content: $iconLogin;
+                    color: $color02;
+                }
+            }
+
+            &--email {
+                &::after {
+                    content: $iconMail;
+                }
+            }
+        }
+
+        &__text {
+            display: flex;
+            height: clamp(24px, 5.217vw, 30px);
+            justify-content: center;
+            align-items: center;
+            font-size: clamp(12px, 2.609vw, 15px);
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    @media (max-width: 575px) {
+        display: flex;
+    }
+}

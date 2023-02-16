@@ -1,0 +1,19 @@
+@import "top-page-banner";
+
+article {
+    padding-top: clamp(20px, 3.125vw, 60px);
+
+    .entry-content {
+        .container--on-page {
+            padding-right: 130px;
+            padding-left: 130px;
+            
+            @media (max-width: 1199px) {
+                padding-right: calc(var(--bs-gutter-x)*.5);
+                padding-left: calc(var(--bs-gutter-x)*.5);
+            }
+        }
+        @import "registration";
+        @import "story-in-numbers";
+    }
+}

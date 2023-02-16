@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for our theme
+ * The header for theme
  */
 ?>
 
@@ -20,10 +20,16 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<header id="masthead" class="site-header">
-		<nav class="navbar navbar-expand-lg">
+		<nav class="navbar navbar-expand-xl">
   			<div class="container">
 				<?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
     				<?php the_custom_logo(); ?>
+				<?php else : ?>
+					<a href="<?php echo get_home_url(); ?>"><?php bloginfo('name'); ?></a>
+				<?php endif; ?>
+				<?php $small_logo_url = get_theme_mod( 'second_logo' ); ?>
+				<?php if ( $small_logo_url ) : ?>
+					<a href="<?php echo get_home_url(); ?>" class="second-logo-link"><?php echo '<img src="' . $small_logo_url . '" alt = "Dock B Hamburg" class="second-logo">'; ?></a>
 				<?php else : ?>
 					<a href="<?php echo get_home_url(); ?>"><?php bloginfo('name'); ?></a>
 				<?php endif; ?>
@@ -40,27 +46,30 @@
 								wp_nav_menu( $args = array(
 									'theme_location'	=> 'admin-menu',
 									'container'			=>  false,
-									'menu_class'		=> 'navbar-nav justify-content-end flex-grow-1',
+									'menu_class'		=> 'navbar-nav navbar-nav--header',
 									'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
 								) );
 							} elseif ( current_user_can('contributor') ) {
 								wp_nav_menu( $args = array(
 									'theme_location'	=> 'member-menu',
 									'container'			=>  false,
-									'menu_class'		=> 'navbar-nav justify-content-end flex-grow-1',
+									'menu_class'		=> 'navbar-nav navbar-nav--header',
 									'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
 								) );
 							} else {
 								wp_nav_menu( $args = array(
 									'theme_location'	=> 'main-menu',
 									'container'			=>  false,
-									'menu_class'		=> 'navbar-nav justify-content-end flex-grow-1',
+									'menu_class'		=> 'navbar-nav navbar-nav--header',
 									'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
 								) );
 							}	
 						?>
       				</div>
     			</div>
+				<div class="small-logo">
+					<img src="<?php echo get_home_url(); ?>/wp-content/uploads/2023/02/logo_icon.webp" alt="Dock B Hamburg">
+				</div>
   			</div>
 		</nav>
 	</header>

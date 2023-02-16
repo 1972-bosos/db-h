@@ -1,27 +1,157 @@
-#masthead {
+.site-header {
     .navbar {
-        .navbar-toggler {}
+        height: 115px;
+        padding: 0;
+
+        .custom-logo-link {
+            margin-right: 38px;
+
+            @media (max-width: 1799px) {
+                margin-right: 20px;
+            }
+
+            @media (max-width: 1499px) {
+                width: 27%;
+                margin-right: 15px;
+            }
+
+            @media (max-width: 1199px) {
+                width: initial;
+            }
+
+            @media (max-width: 767px) {
+                display: none;
+            }
+        }
+
+        .second-logo-link {
+            display: none;
+
+            @media (max-width: 767px) {
+                display: block;
+            }
+        }
+
+        .navbar-toggler {
+            border: none;
+            border-radius: unset;
+            padding: 0;
+
+            .navbar-toggler-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 30px;
+                background-image: unset;
+                background-repeat: unset;
+                background-position: unset;
+                background-size: unset;
+
+                &::after {
+                    font-family: 'dockb-font-icons';
+                    content: $iconMenu;
+                    font-size: 30px;
+                    line-height: 1;
+                    color: $color01;
+                    transition: color 0.33s;
+                }
+
+                &:hover {
+                    &::after {
+                        color: $color02;
+                    }
+                }
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
 
         .offcanvas {
-            .offcanvas-header {}
+            align-self: flex-end;
+            padding-bottom: 10px;
+
+            .offcanvas-header {
+                padding: 15px;
+
+                .btn-close {
+                    width: 40px;
+                    height: 30px;
+                    color: unset;
+                    background: unset;
+                    border: none;
+                    border-radius: unset;
+                    opacity: 1;
+                    padding: 0;
+                    margin: 0;
+
+                    &::after {
+                        font-family: 'dockb-font-icons';
+                        content: $iconClose;
+                        font-size: 30px;
+                        line-height: 1;
+                        color: $color01;
+                        transition: color 0.33s;
+                    }
+
+                    &:hover {
+                        &::after {
+                            color: $color02;
+                        }
+                    }
+
+                    &:focus {
+                        box-shadow: none;
+                    }
+                }
+            }
 
             .offcanvas-body {
+                justify-content: flex-end;
+
                 .navbar-nav {
-                    .menu-item {
-                        a {}
+                    &--header {
+                        .menu-item {
+                            margin-right: 38px;
 
-                        &::after {
-                            content: "|";
-                            margin: 0 15px;
-                        }
+                            @media (max-width: 1799px) {
+                                margin-right: 20px;
+                            }
 
-                        &:last-child {
-                            &::after {
-                                display: none;
+                            @media (max-width: 1499px) {
+                                margin-right: 15px;
                             }
                         }
                     }
                 }
+
+                @media (max-width: 1199px) {
+                    padding: 15px;
+                }
+            }
+
+            @media (max-width: 1499px) {
+                padding-bottom: 4px;
+            }
+
+            @media (max-width: 1199px) {
+                width: auto;
+                padding-bottom: 0;
+            }
+        }
+
+        .small-logo {
+            align-self: flex-end;
+            padding-bottom: 15px;
+
+            @media (max-width: 1499px) {
+                padding-bottom: 7.5px;
+            }
+
+            @media (max-width: 1199px) {
+                display: none;
             }
         }
     }
