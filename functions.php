@@ -125,11 +125,12 @@ function register_custum_post() {
 	register_post_type( 'story-in-numbers', $args );
 	//Group meeting
 	$args = array(
-        'public'   => true,
-        'label'    => 'Gruppentreffen',
-        'supports' => array( 'title' ),
-		'rewrite'  => array( 'slug' => 'gruppentreffen' ),
-		'supports' => array( 'editor' ),
+        'public'     => true,
+        'label'      => 'Gruppentreffen',
+        'supports'   => array( 'title' ),
+		'rewrite'    => array( 'slug' => 'gruppentreffen' ),
+		'supports'   => array( 'title', 'editor' ),
+		'taxonomies' => array( 'category' ),
     );
 	register_post_type( 'group-meeting', $args );
 }
@@ -166,6 +167,20 @@ function meetings_shortcode($attr) {
 	return ob_get_clean();
 }
 add_shortcode('meetings', 'meetings_shortcode');
+//Invitations
+function invitations_shortcode($attr) {
+	ob_start();
+	get_template_part( 'template-parts/content', 'invitation-form' );
+	return ob_get_clean();
+}
+add_shortcode('invitations', 'invitations_shortcode');
+//Meetings list
+function meetings_list_shortcode($attr) {
+	ob_start();
+	get_template_part( 'template-parts/content', 'meetings-list' );
+	return ob_get_clean();
+}
+add_shortcode('meetings_list', 'meetings_list_shortcode');
 
 /*
 * Retrieves the attachment ID from the file URL
@@ -246,4 +261,3 @@ function second_logo_customize_register($wp_customize){
 	)));
 }
 add_action('customize_register', 'second_logo_customize_register');
-

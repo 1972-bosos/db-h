@@ -27,7 +27,7 @@
                         if ( get_option( "vsd_meetems_manual_date" ) ) {
                             echo $manual_date_german;
                         } else {
-                            echo do_shortcode( '[meeting_auto_date]' );
+                            echo do_shortcode( '[meeting_auto_date display="next_meeting_date"]' );
                         }
                     ?>
                     &nbsp;um&nbsp;<?php echo get_option( "vsd_meetems_start_time" ); ?>&nbsp;Uhr</h3>

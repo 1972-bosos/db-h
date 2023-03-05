@@ -118,6 +118,13 @@
                             padding: clamp(5px, 0.781vw, 15px) clamp(10px, 1.042vw, 20px);
                             margin-top: clamp(25px, 2.865vw, 55px);
 
+                            &__type,
+                            &__media {
+                                width: clamp(15px, 1.042vw, 20px);
+                                height: clamp(15px, 1.042vw, 20px);
+                                margin: 0 0 0 clamp(15px, 1.563vw, 30px);
+                            }
+
                             @media (max-width: 767px) {
                                 font-size: 0.833rem;
                             }
@@ -138,6 +145,19 @@
 
                         ::-ms-input-placeholder {
                             color: $white;
+                        }
+
+                        &__type-media {
+                            p {
+                                color: $white;
+                                padding: clamp(5px, 0.781vw, 15px) clamp(10px, 1.042vw, 20px);
+                                margin: clamp(25px, 2.865vw, 55px) 0 0 0;
+                            }
+
+                            .title-text {
+                                color: $white;
+                                padding: clamp(5px, 0.781vw, 15px) clamp(10px, 1.042vw, 20px);
+                            }
                         }
                     }
 
@@ -228,6 +248,21 @@
                             }
                         }
                     }
+                }
+            }
+
+            .form-status-text {
+                font-family: $dinot;
+                margin-top: clamp(15px, 1.563vw, 30px);
+
+                &--success {
+                    font-size: 1rem;
+                    color: green;
+                }
+
+                &--error {
+                    font-size: 0.75rem;
+                    color: red;
                 }
             }
         }
